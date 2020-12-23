@@ -44,44 +44,56 @@ export default function Login() {
           bottom: 0,
           alignItems: 'center',
           paddingBottom: 80,
-          paddingTop: 50,
+          paddingTop: 20,
         }}>
-        <Text style={{margin: 20}}>Already have an account? Sign In</Text>
+        <Text style={{margin: 20, fontSize:16}}>Already have an account? Sign In</Text>
 
         <View style={styles.container}>
           <Controller
             control={control}
             render={({onChange, onBlur, value}) => (
               <TextInput
+              placeholder="username"
                 style={styles.input}
                 onBlur={onBlur}
                 onChangeText={(value) => onChange(value)}
                 value={value}
               />
             )}
-            name="firstName"
+            name="username"
             rules={{required: true}}
             defaultValue=""
           />
-          {errors.firstName && <Text>This is required.</Text>}
+          {/* {errors.username && <Text>This is required.</Text>} */}
+          {errors.username}
 
           <Controller
             control={control}
             render={({onChange, onBlur, value}) => (
               <TextInput
+              
+              placeholder="password"
                 style={styles.input}
                 onBlur={onBlur}
                 onChangeText={(value) => onChange(value)}
                 value={value}
               />
             )}
-            name="lastName"
+            name="password"
             defaultValue=""
           />
           {/* <Button title="Submit" onPress={handleSubmit(onSubmit)} /> */}
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Login</Text>
+          <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
+            <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
+
+          <Text style={{margin: 20, fontSize:16}}>Or sign up with</Text>
+
+          <View style={{flexDirection:"row"}}>
+            <Image source={require("../assets/Icon-ionic-logo-google.png")} style={{width:20, height:20}}/>
+            <Image source={require("../assets/Icon-metro-facebook.png")} style={{width:20, height:20, marginLeft:10}}/>
+            <Image source={require("../assets/Icon-material-email.png")} style={{width:20, height:20, marginLeft:10}}/>
+          </View>
         </View>
       </View>
     </LinearGradient>
@@ -130,10 +142,11 @@ const styles = StyleSheet.create({
   input: {
     padding: 10,
     borderColor: 'gray',
-    borderWidth: 1,
+    // borderWidth: 1,
     borderRadius: 5,
     width: Dimensions.get('window').width * 0.7,
-    marginBottom: 10,
+    marginBottom: 12,
     fontSize: 18,
+    backgroundColor:"#f3f3f3"
   },
 });
