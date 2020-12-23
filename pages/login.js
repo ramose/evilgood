@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
   View,
   Image,
@@ -8,6 +8,7 @@ import {
   Button,
   TextInput,
   TouchableOpacity,
+  Animated,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {useForm, Controller} from 'react-hook-form';
@@ -15,6 +16,20 @@ import {useForm, Controller} from 'react-hook-form';
 export default function Login() {
   const {control, handleSubmit, errors} = useForm();
   const onSubmit = (data) => console.log(data);
+
+  const moveAnim = useRef(new Animated.Value(400)).current;
+
+  const startAnim = () => {
+    Animated.timing(moveAnim, {
+      toValue: 0,
+      duration: 1000,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  useEffect(() => {
+    startAnim();
+  });
 
   return (
     <LinearGradient colors={['#5313B4', '#fff']} style={styles.linearGradient}>
@@ -33,7 +48,7 @@ export default function Login() {
         Good vs Evil
       </Text>
 
-      <View
+      <Animated.View
         style={{
           width: Dimensions.get('window').width,
           padding: 20,
@@ -45,57 +60,72 @@ export default function Login() {
           alignItems: 'center',
           paddingBottom: 80,
           paddingTop: 20,
+          transform: [{translateY: moveAnim}],
         }}>
-        <Text style={{margin: 20, fontSize:16}}>Already have an account? Sign In</Text>
+        <View>
+          <Text style={{margin: 20, fontSize: 16}}>
+            Already have an account? Sign In
+          </Text>
 
-        <View style={styles.container}>
-          <Controller
-            control={control}
-            render={({onChange, onBlur, value}) => (
-              <TextInput
-              placeholder="username"
-                style={styles.input}
-                onBlur={onBlur}
-                onChangeText={(value) => onChange(value)}
-                value={value}
+          <View style={styles.container}>
+            <Controller
+              control={control}
+              render={({onChange, onBlur, value}) => (
+                <TextInput
+                  placeholder="username"
+                  style={styles.input}
+                  onBlur={onBlur}
+                  onChangeText={(value) => onChange(value)}
+                  value={value}
+                />
+              )}
+              name="username"
+              rules={{required: true}}
+              defaultValue=""
+            />
+            {/* {errors.username && <Text>This is required.</Text>} */}
+            {errors.username}
+
+            <Controller
+              control={control}
+              render={({onChange, onBlur, value}) => (
+                <TextInput
+                  placeholder="password"
+                  style={styles.input}
+                  onBlur={onBlur}
+                  onChangeText={(value) => onChange(value)}
+                  value={value}
+                />
+              )}
+              name="password"
+              defaultValue=""
+            />
+
+            {/* onPress={handleSubmit(onSubmit)} */}
+            {/* <Button title="Submit" onPress={handleSubmit(onSubmit)} /> */}
+            <TouchableOpacity style={styles.button} onPress={startAnim}>
+              <Text style={styles.buttonText}>LOGIN</Text>
+            </TouchableOpacity>
+
+            <Text style={{margin: 20, fontSize: 16}}>Or sign up with</Text>
+
+            <View style={{flexDirection: 'row'}}>
+              <Image
+                source={require('../assets/Icon-ionic-logo-google.png')}
+                style={{width: 20, height: 20}}
               />
-            )}
-            name="username"
-            rules={{required: true}}
-            defaultValue=""
-          />
-          {/* {errors.username && <Text>This is required.</Text>} */}
-          {errors.username}
-
-          <Controller
-            control={control}
-            render={({onChange, onBlur, value}) => (
-              <TextInput
-              
-              placeholder="password"
-                style={styles.input}
-                onBlur={onBlur}
-                onChangeText={(value) => onChange(value)}
-                value={value}
+              <Image
+                source={require('../assets/Icon-metro-facebook.png')}
+                style={{width: 20, height: 20, marginLeft: 10}}
               />
-            )}
-            name="password"
-            defaultValue=""
-          />
-          {/* <Button title="Submit" onPress={handleSubmit(onSubmit)} /> */}
-          <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
-            <Text style={styles.buttonText}>LOGIN</Text>
-          </TouchableOpacity>
-
-          <Text style={{margin: 20, fontSize:16}}>Or sign up with</Text>
-
-          <View style={{flexDirection:"row"}}>
-            <Image source={require("../assets/Icon-ionic-logo-google.png")} style={{width:20, height:20}}/>
-            <Image source={require("../assets/Icon-metro-facebook.png")} style={{width:20, height:20, marginLeft:10}}/>
-            <Image source={require("../assets/Icon-material-email.png")} style={{width:20, height:20, marginLeft:10}}/>
+              <Image
+                source={require('../assets/Icon-material-email.png')}
+                style={{width: 20, height: 20, marginLeft: 10}}
+              />
+            </View>
           </View>
         </View>
-      </View>
+      </Animated.View>
     </LinearGradient>
   );
 }
@@ -147,6 +177,6 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width * 0.7,
     marginBottom: 12,
     fontSize: 18,
-    backgroundColor:"#f3f3f3"
+    backgroundColor: '#f3f3f3',
   },
 });
