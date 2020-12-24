@@ -13,7 +13,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {useForm, Controller} from 'react-hook-form';
 
-export default function Login() {
+export default function Login({navigation}) {
   const {control, handleSubmit, errors} = useForm();
   const onSubmit = (data) => console.log(data);
 
@@ -103,7 +103,7 @@ export default function Login() {
 
             {/* onPress={handleSubmit(onSubmit)} */}
             {/* <Button title="Submit" onPress={handleSubmit(onSubmit)} /> */}
-            <TouchableOpacity style={styles.button} onPress={startAnim}>
+            <TouchableOpacity style={styles.button} onPress={()=>{navigation.replace('tabs')}}>
               <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
 

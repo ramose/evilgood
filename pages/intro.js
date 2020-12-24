@@ -31,7 +31,7 @@ export default function Intro({navigation}) {
         It's up to you
       </Text>
       <Pressable style={styles.button} onPressOut={()=>{
-        navigation.navigate("login")
+        navigation.replace("login")
       }}>
         <Text style={styles.buttonText}>Let's Get Started</Text>
       </Pressable>
