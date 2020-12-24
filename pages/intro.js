@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Image, Text, StyleSheet, Dimensions} from 'react-native';
+import {View, Image, Text, StyleSheet, Dimensions, Pressable} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-export default function Intro() {
+export default function Intro({navigation}) {
   return (
     <LinearGradient colors={['#5313B4', '#fff']} style={styles.linearGradient}>
       <Image style={styles.imgAngel} source={require('../assets/angel.png')} />
@@ -30,9 +30,11 @@ export default function Intro() {
         }}>
         It's up to you
       </Text>
-      <View style={styles.button}>
+      <Pressable style={styles.button} onPressOut={()=>{
+        navigation.navigate("login")
+      }}>
         <Text style={styles.buttonText}>Let's Get Started</Text>
-      </View>
+      </Pressable>
 
       <View style={{padding: 80}} />
     </LinearGradient>
