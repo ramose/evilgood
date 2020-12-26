@@ -16,6 +16,11 @@ export default function TabsContainer() {
       <Tab.Navigator
         tabBarOptions={{
           showLabel: false,
+          style: {
+            backgroundColor: 'white',
+            borderTopColor:"white",
+            padding:0
+          },
         }}>
         <Tab.Screen
           name="Home"
@@ -24,7 +29,7 @@ export default function TabsContainer() {
             tabBarIcon: ({size, focused, color}) => {
               return (
                 <Image
-                  style={{width: size, height: size}}
+                  style={{width: size, height: size, marginLeft:100}}
                   source={require('../assets/tabbar/tab-1.png')}
                 />
               );
@@ -38,7 +43,7 @@ export default function TabsContainer() {
             tabBarIcon: ({size, focused, color}) => {
               return (
                 <Image
-                  style={{width: size, height: size}}
+                  style={{width: size, height: size, marginLeft:30}}
                   source={require('../assets/tabbar/tab-2.png')}
                 />
               );
@@ -66,7 +71,7 @@ export default function TabsContainer() {
             tabBarIcon: ({size, focused, color}) => {
               return (
                 <Image
-                  style={{width: size, height: size}}
+                  style={{width: size, height: size, marginLeft:-30}}
                   source={require('../assets/tabbar/tab-4.png')}
                 />
               );
@@ -80,7 +85,7 @@ export default function TabsContainer() {
             tabBarIcon: ({size, focused, color}) => {
               return (
                 <Image
-                  style={{width: size, height: size}}
+                  style={{width: 20, marginLeft:-100}}
                   source={require('../assets/tabbar/tab-5.png')}
                 />
               );
