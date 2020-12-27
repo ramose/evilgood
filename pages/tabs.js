@@ -19,7 +19,8 @@ export default function TabsContainer() {
           style: {
             backgroundColor: 'white',
             borderTopColor:"white",
-            padding:0
+            paddingTop:0,
+            marginTop:20
           },
         }}>
         <Tab.Screen
