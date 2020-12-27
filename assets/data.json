@@ -1,0 +1,25 @@
+{
+    "username":"Michael Shenker",
+    "summary":[
+        {
+            "evil":25,
+            "good":55
+        },
+        {
+            "evil":25,
+            "good":75
+        },
+        {
+            "evil":30,
+            "good":70
+        },
+        {
+            "evil":60,
+            "good":40
+        },
+        {
+            "evil":55,
+            "good":45
+        }
+    ]
+}
