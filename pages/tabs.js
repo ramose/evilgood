@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from './home';
 import List from './list';
+import Act from "./act";
 
 // const Tabs = AnimatedTabBarNavigator();
 
@@ -20,7 +21,8 @@ export default function TabsContainer() {
             backgroundColor: 'white',
             borderTopColor:"white",
             paddingTop:0,
-            marginTop:20
+            // marginTop:20,
+            height:100
           },
         }}>
         <Tab.Screen
@@ -53,7 +55,7 @@ export default function TabsContainer() {
         />
         <Tab.Screen
           name="Tab 3"
-          component={Home}
+          component={Act}
           options={{
             tabBarIcon: ({size, focused, color}) => {
               return (

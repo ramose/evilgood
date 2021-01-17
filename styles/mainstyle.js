@@ -17,6 +17,11 @@ const mainStyle = StyleSheet.create({
     subtitle:{
         fontSize:18,
         fontWeight:"bold"
+    },
+    mainButton:{
+        borderRadius:5,
+        backgroundColor:'purple',
+        padding:5
     }
 })
 

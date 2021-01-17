@@ -97,6 +97,7 @@ const TimeMenus = (props) => {
       <View style={{marginTop:20}}/>
       {/** List Latest Acts */}
       <FlatList
+      keyExtractor={(item,index) => item.id}
       data={data.acts}
       renderItem={({item})=>{
         return(

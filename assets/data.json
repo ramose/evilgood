@@ -1,57 +1,62 @@
 {
-    "username":"Michael Shenker",
-    "summary":[
-        {
-            "evil":25,
-            "good":75
-        },
-        {
-            "evil":35,
-            "good":65
-        },
-        {
-            "evil":100,
-            "good":0
-        },
-        {
-            "evil":0,
-            "good":100
-        },
-        {
-            "evil":55,
-            "good":45
-        }
-    ],
-    "acts":[
-        {
-            "date":"Dec 19, 2020",
-            "act":"I'm flirting with my boss's wife",
-            "good":false,
-            "rate":70
-        },
-        {
-            "date":"Dec 18, 2020",
-            "act":"Helping old woman cross the street",
-            "good":true,
-            "rate":90
-        },
-        {
-            "date":"Dec 16, 2020",
-            "act":"Playing guitar all night long",
-            "good":true,
-            "rate":55
-        },
-        {
-            "date":"Dec 15, 2020",
-            "act":"I'm flirting with my boss's wife",
-            "good":false,
-            "rate":70
-        },
-        {
-            "date":"Dec 13, 2020",
-            "act":"I'm flirting with my boss's wife",
-            "good":false,
-            "rate":70
-        }
-    ]
+  "username": "Michael Shenker",
+  "summary": [
+    {
+      "evil": 25,
+      "good": 75
+    },
+    {
+      "evil": 35,
+      "good": 65
+    },
+    {
+      "evil": 100,
+      "good": 0
+    },
+    {
+      "evil": 0,
+      "good": 100
+    },
+    {
+      "evil": 55,
+      "good": 45
+    }
+  ],
+  "acts": [
+    {
+      "id": 123,
+      "date": "Dec 19, 2020",
+      "act": "I'm flirting with my boss's wife",
+      "good": false,
+      "rate": 70
+    },
+    {
+      "id": 233,
+      "date": "Dec 18, 2020",
+      "act": "Helping old woman cross the street",
+      "good": true,
+      "rate": 90
+    },
+    {
+      "id": 1333,
+      "date": "Dec 16, 2020",
+      "act": "Playing guitar all night long",
+      "good": true,
+      "rate": 55
+    },
+    {
+      "id": 544,
+      "date": "Dec 15, 2020",
+      "act": "I'm flirting with my boss's wife",
+      "good": false,
+      "rate": 70
+    },
+    {
+      "id": 1233,
+      "date": "Dec 13, 2020",
+      "act": "I'm flirting with my boss's wife",
+      "good": false,
+      "rate": 70
+    }
+  ]
 }
