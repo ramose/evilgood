@@ -41,7 +41,7 @@ export default function TabsContainer() {
         />
         <Tab.Screen
           name="Settings"
-          component={List}
+          component={Home}
           options={{
             tabBarIcon: ({size, focused, color}) => {
               return (

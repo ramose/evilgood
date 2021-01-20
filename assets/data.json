@@ -24,39 +24,25 @@
   ],
   "acts": [
     {
-      "id": 123,
+      "id": "123",
       "date": "Dec 19, 2020",
       "act": "I'm flirting with my boss's wife",
       "good": false,
       "rate": 70
     },
     {
-      "id": 233,
+      "id": "233",
       "date": "Dec 18, 2020",
       "act": "Helping old woman cross the street",
       "good": true,
       "rate": 90
     },
     {
-      "id": 1333,
+      "id": "1333",
       "date": "Dec 16, 2020",
       "act": "Playing guitar all night long",
       "good": true,
       "rate": 55
-    },
-    {
-      "id": 544,
-      "date": "Dec 15, 2020",
-      "act": "I'm flirting with my boss's wife",
-      "good": false,
-      "rate": 70
-    },
-    {
-      "id": 1233,
-      "date": "Dec 13, 2020",
-      "act": "I'm flirting with my boss's wife",
-      "good": false,
-      "rate": 70
-    }
+    }    
   ]
 }

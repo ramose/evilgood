@@ -35,10 +35,10 @@ export default function Home() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{padding: 20}}>
+      <ScrollView style={{padding: 20}} keyboardShouldPersistTaps='handled'>
         <Header />
         <TimeMenus evil={evilValue} good={goodValue} />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -95,6 +95,7 @@ const TimeMenus = (props) => {
         <View style={{marginTop:40}}/>
       <Text style={mainStyle.title1}>Your Latest Acts</Text>
       <View style={{marginTop:20}}/>
+
       {/** List Latest Acts */}
       <FlatList
       keyExtractor={(item,index) => item.id}
